@@ -1,5 +1,5 @@
 Nume: Smeu Florin-Ion
-Grupa: 322 CD
+Email: florin.ion.smeu@gmail.com
 			     
 			
 			      ===================		
@@ -7,8 +7,8 @@ Grupa: 322 CD
 			      ===================
 
 
-In cadrul acestei teme am rezolvat task-urile 1, 2, 3, 5 si 6. Vom folosi in
-continuare urmatoarele notatii: 
+Tema a fost compusa din 6 task-uri care constau in decriptarea unor mesaje 
+utilizand Assembly x86. Vom folosi in continuare urmatoarele notatii: 
 	M = mesajul descifrat (plain);
 	C = mesajul cifrat (cyphered);
 	K = cheia cu care a fost realizata criptarea.   
@@ -55,4 +55,6 @@ cat si a tabelei de substitutie. Fiecare litera din textul criptat era apoi
 inlocuita cu litera corespunzatoare din tabela de substitutie, realizandu-se 
 in acest mod decriptarea textului.
      
-		  	
+Utilizare:
+	make tema2
+	./tema2 < input.dat	
