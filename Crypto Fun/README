@@ -1,0 +1,58 @@
+Nume: Smeu Florin-Ion
+Grupa: 322 CD
+			     
+			
+			      ===================		
+			      TEMA 2 - Crypto Fun
+			      ===================
+
+
+In cadrul acestei teme am rezolvat task-urile 1, 2, 3, 5 si 6. Vom folosi in
+continuare urmatoarele notatii: 
+	M = mesajul descifrat (plain);
+	C = mesajul cifrat (cyphered);
+	K = cheia cu care a fost realizata criptarea.   
+
+TASK 1: Pentru a decripta mesajul corespunzator acestui task am realizat 
+operatia de XOR intre octetii mesajului cifrat si cei ai cheii cu care mesajul
+fusese cifrat. Conform notatiilor facute anterior, avem urmatoarele egalitati:
+	C = M xor K;
+	M = C xor K.
+Tinand cont de acestea, textul plain "First challenge down!" a fost descoperit.
+
+TASK 2: De aceasta data, tehnica de criptare folosita a fost diferita si a 
+presupus folosirea rezultatului criptarii unui bloc de date (byte) in criptarea
+urmatorului bloc. Pentru rezolvare, am dedus faptul ca:
+	M(i + 1) = C(i) xor C(i + 1), 
+unde 0 < i < lungimea mesajului criptat.
+
+TASK 3: Rezolvarea acestei sarcini a fost asemanatoare cu cea a primului task.
+Particularitatea a reprezentat-o faptul ca datele erau reprezentate de 
+caractere hexazecimale. O cifra hexazecimala devenea deci un nibble pentru 
+byte-ul reprezentat in binar corespunzator. Dupa realizarea conversiei, 
+atat pentru mesaj cat si pentru cheia folosita in decriptare, am efectuat 
+operatia XOR intre fiecare din octetii acestor doua siruri, obtinand mesajul
+decriptat.
+
+TASK 5: Cunoscand faptul ca mesajul decriptat continea cuvantul "force" si
+in plus, criptarea acestuia se realizase cu o cheie de lungime egala cu un
+octet, am testat pe rand fiecare cheie din intervalul (1, 255). Cautarea 
+cuvantului "force" in mesajul decriptat a permis aflarea cheii de valoare 142.
+Ulterior, textul a fost descifrat tot efectuand operatia de XOR.
+   
+TASK 6: Cheia acestei sarcini a reprezentat-o aflarea tabelei de substitutie.
+Pentru aceasta, am calculat mai intai numarul de aparitii ale fiearui caracter
+in textul cifrat. Prima observatie pe care am facut-o a fost aceea ca spatiul
+este cel mai intalnit caracter, deoarece apare dupa fiecare cuvant. Apoi, 
+am testat pe rand posibilitati de substituire a literelor, tinand cont de 
+frecventa acestora in limba engleza. Indiciile cele mai relevante au fost 
+cuvintele de lungime mica (1-3 caractere), deoarece astfel au putut fi
+identificate conjunctii, pronume si verbe care au condus in final la aflarea 
+intregii tabele de substitutie. In implementarea temei, aceasta a fost adaugata
+pe stiva inainte de a fi apelata functia care realiza decriptarea textului 
+corespunzator acestui task. Functia a primit ca parametri atat adresa sirului, 
+cat si a tabelei de substitutie. Fiecare litera din textul criptat era apoi 
+inlocuita cu litera corespunzatoare din tabela de substitutie, realizandu-se 
+in acest mod decriptarea textului.
+     
+		  	
