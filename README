@@ -1,0 +1,29 @@
+Nume: Smeu Florin-Ion
+Grupa: 322CD
+	
+			     TEMA 1 - CONVERSIE
+			    ====================
+
+In cadrul acestei teme am realizat conversia unor numere din baza zecimala in 
+diverse alte baze, cuprinse intre 2 si 16. Datele de intrare erau
+reprezentate sub forma a doi vectori care contineau numerele de convertit, 
+respectiv bazele in care se dorea realizarea conversiei.
+
+Deimpartitul era chiar numarul de convertit, impartitorul fiind baza in care
+doream sa convertim. Prin impartiri succesive, obtinem o succesiune de resturi
+care reprezinta valoarea numarului initial reprezentata in baza in care doream
+sa convertim.
+
+Pentru a efectua o impartire, tinand cont ca numerele erau reprezentate pe 32 
+de biti, am plasat valoarea lor in registrul eax, iar in edx ne-am asigurat ca 
+avem valoarea zero. Impartitorul este salvat in registrul ebx. In urma 
+operatiei de impartire, in registrul eax vom obtine catul, iar in edx restul. 
+Catul va fi impartit din nou la baza (impartitor), pana cand acesta va deveni 
+nul. Resturile obtinute pe parcurs sunt depuse pe stiva. In momentul in care 
+catul devine zero, recuperam resturile de pe stiva (pop) si afisam valoarea 
+acestora (in hexazecimal).
+
+Daca vreuna din baze nu se incadreaza in intervalul stabilit, afisam mesajul
+"Baza incorecta" si trecem la conversia numerelor urmatoare, daca acestea 
+exista. 
+   
